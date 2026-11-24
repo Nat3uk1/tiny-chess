@@ -6,9 +6,8 @@
 
 An entry for make.fun's [Build the strongest chess engine in 4 KB of Python](https://make.fun/bounty/tiny-chess-01).
 
-`main.py` is the whole engine, packed by `makefun compress` from a readable
-source: a 0x88 negamax search with alpha-beta pruning, quiescence over
-captures, promotions and check evasions, a transposition table, null-move
-pruning, late move reductions, killer and MVV-LVA move ordering, and a
-material + piece-square evaluation with the bishop pair. It searches to a
-fixed node budget, never a clock, so every replay plays the same moves.
+`main.py` (4,088 bytes) is a self-contained engine: 0x88 board, negamax alpha-beta with PVS, quiescence search, transposition table, null-move pruning, late-move reductions, a history heuristic for quiet moves, futility and delta pruning, and an evaluation with material, piece-square tables, bishop pair, passed-pawn bonuses by rank, rook open/semi-open file bonuses and a king pawn-shield term. Deterministic, under a ply-scaled node budget.
+
+## License
+
+MIT — see `LICENSE`.
